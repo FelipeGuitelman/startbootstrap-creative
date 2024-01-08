@@ -79,6 +79,10 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+.oswald-font {
+  font-family: 'Oswald', sans-serif;
+}
+
 *,
 *::before,
 *::after {
@@ -640,6 +644,10 @@ progress {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
+}
+
+.oswald-font {
+    font-family: 'Oswald', sans-serif;
 }
 
 @media (min-width: 576px) {
@@ -2948,7 +2956,7 @@ textarea.form-control-lg {
 
 .btn-light {
   --bs-btn-color: #000;
-  --bs-btn-bg: #f8f9fa;
+  --bs-btn-bg: #aaaaaa;
   --bs-btn-border-color: #f8f9fa;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #d3d4d5;
