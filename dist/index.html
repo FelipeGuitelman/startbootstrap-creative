@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
         rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap">
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
@@ -35,42 +36,42 @@
         });
     </script>
 
-<script>
-    $(document).ready(function () {
-      // Reemplaza 'ACCESS_TOKEN' con tu Access Token obtenido
-      var accessToken = 'EAAaBIEv7ZBAoBO2zrto0tsnSkFX2VrlkSHJZB4bT726Sg2p8uChLaiEKdeIE8paFxvpC4eTlOV1aTn2fOfMZCq7q2WpCdSr0ZA0oGorZCRmGLNNy8BxNZByWoq8MsfEVrfWIFEy0L3TPJz7dlbzRp8RpoqRbVbqP7ikdw7Wn7e7WfHZCxDLdXV6cBcSmhsDLdDuboMzQ18YlDVt8SeksqmQmWxdcXp9PVCANjjHM7Fzsc0cyh19cdzmlRIpzaZACdIntW8yUrx02';
-      var userId = 'nuevasenergias'; // Reemplaza 'USER_ID' con tu ID de usuario de Instagram
-  
-      // URL para obtener las últimas 3 fotos del usuario
-      var apiUrl = 'https://graph.instagram.com/v12.0/' + userId + '/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&limit=3&access_token=' + accessToken;
-        console.log(apiUrl);
-      // Realiza la solicitud a la API de Instagram
-      $.ajax({
-        url: apiUrl,
-        method: 'GET',
-        dataType: 'json',
-        success: function (response) {
-          // Procesa la respuesta y muestra las fotos en la sección de "Call to action"
-          if (response.data) {
-            var photosHtml = '';
-  
-            response.data.forEach(function (photo) {
-              photosHtml += '<div class="instagram-photo">';
-              photosHtml += '<a href="' + photo.permalink + '" target="_blank">';
-              photosHtml += '<img src="' + photo.thumbnail_url + '" alt="' + photo.caption + '" />';
-              photosHtml += '</a>';
-              photosHtml += '</div>';
+    <script>
+        $(document).ready(function () {
+            // Reemplaza 'ACCESS_TOKEN' con tu Access Token obtenido
+            var accessToken = 'EAAaBIEv7ZBAoBO2zrto0tsnSkFX2VrlkSHJZB4bT726Sg2p8uChLaiEKdeIE8paFxvpC4eTlOV1aTn2fOfMZCq7q2WpCdSr0ZA0oGorZCRmGLNNy8BxNZByWoq8MsfEVrfWIFEy0L3TPJz7dlbzRp8RpoqRbVbqP7ikdw7Wn7e7WfHZCxDLdXV6cBcSmhsDLdDuboMzQ18YlDVt8SeksqmQmWxdcXp9PVCANjjHM7Fzsc0cyh19cdzmlRIpzaZACdIntW8yUrx02';
+            var userId = 'nuevasenergias'; // Reemplaza 'USER_ID' con tu ID de usuario de Instagram
+
+            // URL para obtener las últimas 3 fotos del usuario
+            var apiUrl = 'https://graph.instagram.com/v12.0/' + userId + '/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&limit=3&access_token=' + accessToken;
+            console.log(apiUrl);
+            // Realiza la solicitud a la API de Instagram
+            $.ajax({
+                url: apiUrl,
+                method: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    // Procesa la respuesta y muestra las fotos en la sección de "Call to action"
+                    if (response.data) {
+                        var photosHtml = '';
+
+                        response.data.forEach(function (photo) {
+                            photosHtml += '<div class="instagram-photo">';
+                            photosHtml += '<a href="' + photo.permalink + '" target="_blank">';
+                            photosHtml += '<img src="' + photo.thumbnail_url + '" alt="' + photo.caption + '" />';
+                            photosHtml += '</a>';
+                            photosHtml += '</div>';
+                        });
+
+                        $('#instagram-photos').html(photosHtml);
+                    }
+                },
+                error: function (error) {
+                    console.error('Error al obtener fotos de Instagram:', error);
+                }
             });
-  
-            $('#instagram-photos').html(photosHtml);
-          }
-        },
-        error: function (error) {
-          console.error('Error al obtener fotos de Instagram:', error);
-        }
-      });
-    });
-  </script>
+        });
+    </script>
 </head>
 
 <body id="page-top">
@@ -110,7 +111,8 @@
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 mb-5 oswald-font">Sabemos que es el camino necesario hacia un FUTURO
                         SOSTENIBLE</p>
-                    <a class="btn btn-primary btn-xl" href="#about" style="font-family: 'Oswald', sans-serif;">Quienes Somos?</a>
+                    <a class="btn btn-primary btn-xl" href="#about" style="font-family: 'Oswald', sans-serif;">Quienes
+                        Somos?</a>
                 </div>
             </div>
         </div>
@@ -198,7 +200,8 @@
             </div>
         </div>
         <div class="text-center">
-            <a class="btn btn-light btn-xl" href="#services" style="font-family: 'Oswald', sans-serif; margin-top: 30px;">Servicios</a>
+            <a class="btn btn-light btn-xl" href="#services"
+                style="font-family: 'Oswald', sans-serif; margin-top: 30px;">Servicios</a>
         </div>
     </section>
     <!-- Services-->
@@ -263,11 +266,14 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Es una manta que se utiliza para calefaccionar tanques de gran tamaño que contengan liquidos propensos a congelarse al estar expuestos a bajas temperaturas">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg"
+                            title="Es una manta que se utiliza para calefaccionar tanques de gran tamaño que contengan liquidos propensos a congelarse al estar expuestos a bajas temperaturas">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Manta Termica</div>
-                                <div class="project-name">Es una manta que se utiliza para calefaccionar tanques de gran tamaño que contengan liquidos propensos a congelarse al estar expuestos a bajas temperaturas</div>
+                                <div class="project-name">Es una manta que se utiliza para calefaccionar tanques de gran
+                                    tamaño que contengan liquidos propensos a congelarse al estar expuestos a bajas
+                                    temperaturas</div>
                             </div>
                         </a>
                     </div>
@@ -399,8 +405,36 @@
         </div>
     </div>
     <div class="text-center">
-        <a class="btn btn-light btn-xl" href="#seguinos" style="font-family: 'Oswald', sans-serif; margin: 30px;">Seguinos!</a>
+        <a class="btn btn-light btn-xl" href="#seguinos"
+            style="font-family: 'Oswald', sans-serif; margin: 30px;">Seguinos!</a>
     </div>
+    <!-- Feed Instagram -->
+    <section id="feed-contenedor">
+        <div class="main-galery">
+            <!-- Left -->
+            <div class="chevron">
+                <span id="prev" class="material-icons">
+                    &#xe5cb;
+                </span>
+            </div>
+
+            <!-- Galery -->
+            <div class="contenedor-galery">
+                <div class="galery">
+
+                </div>
+            </div>
+
+            <!-- Right -->
+            <div class="chevron">
+                <span id="next" class="material-icons">
+                    &#xe5cc;
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <script src="api.js"></script>
     <!-- Call to action-->
     <section class="page-section bg-dark text-white" id="seguinos">
         <div class="container px-4 px-lg-5 text-center">
