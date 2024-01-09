@@ -9,7 +9,7 @@ const prev = document.querySelector('#prev')
 
 const token = process.env.IG_TOKEN
 
-const url = `https://graph.instagram.com/me/media?fields=thumbnail_url,media_url,caption,permalink&limit=20&access_token= ${token}`
+const url = `https://graph.instagram.com/me/media?fields=thumbnail_url,media_url,caption,permalink&limit=20&access_token=IGQWRPdV91ZAXZAzUkdWTG13VFZAWOGlwVEVsSFQwSnVCdVdlQkhQamhSVDRqNUlZAbnBMYzdTdzNCMWZAnSnYwREZATSzRzSEZAYRVh2WjluT3NHZAS1QbllqNHpEUWlhZAWRyd2lEQW5pNWhPNXM2aHdSYmFDcXRpTVdhb2cZD`
 
 fetch(url)
 .then(res => res.json)
